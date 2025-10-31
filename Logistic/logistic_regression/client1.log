@@ -1,0 +1,45 @@
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.client.start_numpy_client() is deprecated. 
+	Instead, use `flwr.client.start_client()` by ensuring you first call the `.to_client()` method as shown below: 
+	flwr.client.start_client(
+		server_address='<IP>:<PORT>',
+		client=FlowerClient().to_client(), # <-- where FlowerClient is of type flwr.client.NumPyClient object
+	)
+	Using `start_numpy_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[92mINFO [0m:      
+[92mINFO [0m:      Received: train message 1d63ec34-78af-445b-905a-f95a799c41d1
+[92mINFO [0m:      Sent reply
+[92mINFO [0m:      
+[92mINFO [0m:      Received: evaluate message b49c7e32-e623-49ca-b2c5-dab87a54450c
+[92mINFO [0m:      Sent reply
+[92mINFO [0m:      
+[92mINFO [0m:      Received: reconnect message 0921c9ea-8269-4ca3-b07b-b96cf0c30050
+[92mINFO [0m:      Disconnect and shut down
+
+[Client] Loading private local data from 'client1.csv'...
+[Client] Fitting and transforming data with preprocessing pipeline...
+[Client] Data loaded: 1257 train samples, 315 test samples.
+[Client client1.csv] Connecting to server at 127.0.0.1:8080...
+  ...Local training (fit)...
+  ...Local training complete.
+  ...Local evaluation...
+  ...Evaluation complete: Accuracy=0.6571, LogLoss=0.6181
+
+[Client client1.csv] Thank you for your contribution! Connection closed.
