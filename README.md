@@ -1,0 +1,12 @@
+**Files Used**
+- client11.csv, client21.csv ... client61.csv ---> Contains private user data stored by the clients.
+- test.csv  : Test dataset
+- combined1.csv : combined dataset of all clients.
+- client.py : The file that needs to be executed by the client for training.
+- server.py : Programmed to setup the server to aggregate the parameters.
+- model_upto1.npz : Numpy array file storing the modified parameters after the compute by client 1 & 2.
+- model_upto2.npz : Numpy array file storing the modified parameters after the compute by client 3 & 4.
+- model_upto3.npz : Numpy array file storing the modified parameters after the compute by client 5 & 6.
+- remodel1.py : Constructs ANN Model from the Numpy array file of model_upto1.npz
+- remodel2.py : Constructs ANN Model from the Numpy array file of model_upto2.npz
+- remodel3.py : Constructs ANN Model from the Numpy array file of model_upto3.npz
