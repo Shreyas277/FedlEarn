@@ -14,27 +14,16 @@ FedlEarn is a Python-based implementation of a federated learning workflow. Clie
 ## Repository Structure  
 FedlEarn/
 ├── Dataset/ # client datasets and combined dataset
-
 │ ├── client11.csv
-
 │ ├── client21.csv
-
 │ ├── …
-
 │ ├── combined1.csv # merged dataset from all clients
-
 │ └── test.csv # test dataset
-
 ├── client.py # client side training code
-
 ├── server.py # aggregation/ server code
-
 ├── remodel2.py # reconstruct model from checkpoint model_upto2.npz
-
 ├── run.sh # shell script to run full pipeline
-
 ├── ui3.py # UI/visualization script
-
 └── README.md # this file
 
 ---
@@ -66,6 +55,11 @@ FedlEarn/
     ```bash
     ./run.sh
     ```
+5. **For UI Model to be functional**
+6. ```bash
+    python3 remodel2.py (generates .pkl file)
+    python3 ui3.py 
+    ```
 
 > This script will:
 > * Trigger client side training for each dataset
@@ -87,6 +81,6 @@ The checkpoint files are named `model_uptoX.npz` where `X` indicates up to which
 * **Client Side**: Each client loads its local data CSV (e.g., `client11.csv`) and trains a local model. It then exports its model weights (e.g., via numpy) and sends them to the server.
 * **Server Side**: The server collects the weights from all clients, performs an **aggregation step** (e.g., averaging) to form a new global model weight set. This is saved as `model_upto1.npz`, `model_upto2.npz`, etc.
 * **Reconstruction / Deployment**: Scripts such as `remodel2.py` load the checkpoint file and build an ANN model that uses those weights for inference or further training.
-* **Visualization / UI**: The `ui3.py` script offers a simple interface (CLI or GUI) to inspect results, maybe show accuracy on `test.csv`, visualize model behaviour, etc.
+* **Visualization / UI**: The `ui3.py` script offers a simple interface (CLI or GUI) to inspect results, showing prediction for any input based on the .pkl file generated on executing remodel2.py.
 
 ---
