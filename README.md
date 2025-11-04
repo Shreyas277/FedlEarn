@@ -14,16 +14,27 @@ FedlEarn is a Python-based implementation of a federated learning workflow. Clie
 ## Repository Structure  
 FedlEarn/
 ├── Dataset/ # client datasets and combined dataset
+
 │ ├── client11.csv
+
 │ ├── client21.csv
+
 │ ├── …
+
 │ ├── combined1.csv # merged dataset from all clients
+
 │ └── test.csv # test dataset
+
 ├── client.py # client side training code
+
 ├── server.py # aggregation/ server code
+
 ├── remodel2.py # reconstruct model from checkpoint model_upto2.npz
+
 ├── run.sh # shell script to run full pipeline
+
 ├── ui3.py # UI/visualization script
+
 └── README.md # this file
 
 ---
