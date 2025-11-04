@@ -1,12 +1,14 @@
-**Files Used**
-- client11.csv, client21.csv ... client61.csv ---> Contains private user data stored by the clients.
-- test.csv  : Test dataset
-- combined1.csv : combined dataset of all clients.
-- client.py : The file that needs to be executed by the client for training.
-- server.py : Programmed to setup the server to aggregate the parameters.
-- model_upto1.npz : Numpy array file storing the modified parameters after the compute by client 1 & 2.
-- model_upto2.npz : Numpy array file storing the modified parameters after the compute by client 3 & 4.
-- model_upto3.npz : Numpy array file storing the modified parameters after the compute by client 5 & 6.
-- remodel1.py : Constructs ANN Model from the Numpy array file of model_upto1.npz
-- remodel2.py : Constructs ANN Model from the Numpy array file of model_upto2.npz
-- remodel3.py : Constructs ANN Model from the Numpy array file of model_upto3.npz
+# FedlEarn
+
+## Overview  
+FedlEarn is a Python-based implementation of a federated learning workflow. Clients train local models on their data, the server aggregates parameters, and finally the global model can be reconstructed from the aggregated weights.
+
+## Features  
+- Multiple client scripts (`client.py`) that train on separate datasets (e.g., `client11.csv`, `client21.csv`, …)  
+- A server script (`server.py`) that collects model updates from clients and performs parameter aggregation.  
+- Model checkpoint files (`model_upto1.npz`, `model_upto2.npz`, `model_upto3.npz`) that store the evolving global model parameters.  
+- Reconstruction of the global model via `remodel2.py` (and similarly `remodel1.py`, `remodel3.py`).  
+- A simple UI script (`ui3.py`) for interacting with or visualizing results.  
+- A `run.sh` shell script to orchestrate the workflow end-to-end.
+
+## Repository Structure  
